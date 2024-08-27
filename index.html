@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Study</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./src/node_modules/vuetify/vuetify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <layout/>
+    </div>
+    <script type="importmap">
+        { 
+            "imports": 
+                { 
+                    "vue":          "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+                    "vue-router":   "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.0.0-alpha.12/vue-router.esm.js",
+                    "vuex":         "https://unpkg.com/vuex@4.0.0/dist/vuex.global.js",
+                    "vuetify":      "https://unpkg.com/vuetify@3.1.10/dist/vuetify.esm.js"
+                }
+        }
+    </script>
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
