@@ -25,7 +25,6 @@ export default {
         </v-navigation-drawer>
         <v-main>
           <v-card-text>
-            <introduction></introduction>
             <router-view></router-view>
           </v-card-text>
         </v-main>
