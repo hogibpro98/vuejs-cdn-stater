@@ -100,15 +100,103 @@ export default {
 </details>
 
 <details>
-    <summary>⭐:<code>Route Naming</code></summary>
+    <summary>⭐:<code>Reactivity Fundamentals</code></summary>
 
-    1. What: cách đặt tên cho các đường dẫn
-    2. Where: <code>web.php</code> | <code>api.php</code>
-    3. How to: use method <code>name</code> Ex: Route::get('/home', [HomeController::class, 'index'])->name('home');
-    4. Why: ngắn gọn, rễ nhớ, thuận tiện sử dụng
-    5. When: Khi bạn biết rằng đường dẫn này sẽ được sử dụng ở nhiều nơi
+1. DOM Update Timing
+```
+import { nextTick } from 'vue'
+
+export default {
+  methods: {
+    async increment() {
+      this.count++
+      await nextTick()
+      // Now the DOM is updated
+    }
+  }
+}
+```
+2. Stateful Methods
+```
+export default {
+  created() {
+    // each instance now has its own copy of debounced handler
+    this.debouncedClick = _.debounce(this.click, 500)
+  },
+  unmounted() {
+    // also a good idea to cancel the timer
+    // when the component is removed
+    this.debouncedClick.cancel()
+  },
+  methods: {
+    click() {
+      // ... respond to click ...
+    }
+  }
+}
+```
 
 </details>
+
+<details>
+    <summary>⭐:<code>Computed Properties</code></summary>
+
+1. DOM Update Timing
+```
+import { nextTick } from 'vue'
+
+export default {
+  methods: {
+    async increment() {
+      this.count++
+      await nextTick()
+      // Now the DOM is updated
+    }
+  }
+}
+```
+2. Stateful Methods
+```
+export default {
+  created() {
+    // each instance now has its own copy of debounced handler
+    this.debouncedClick = _.debounce(this.click, 500)
+  },
+  unmounted() {
+    // also a good idea to cancel the timer
+    // when the component is removed
+    this.debouncedClick.cancel()
+  },
+  methods: {
+    click() {
+      // ... respond to click ...
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+    <summary>⭐:<code>Class and Style Bindings</code></summary>
+
+1. DOM Update Timing
+```
+data() {
+  return {
+    activeColor: 'red',
+    fontSize: 30
+  }
+}
+<div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+```
+
+</details>
+
+<summary>⭐:<code>Conditional Rendering v-if v-else v-for v-show</code></summary>
+<summary>⭐:<code>List Rendering v-for</code></summary>
+<summary>⭐:<code>Event Handling</code></summary>
+<summary>⭐:<code>Form Input Bindings</code></summary>
 
   </td>
   <td>
