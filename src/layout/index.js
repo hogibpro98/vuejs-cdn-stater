@@ -1,8 +1,8 @@
-import { ref, createApp, computed, onMounted } from 'vue'
+import { ref, createApp, computed, onMounted } from "vue";
 
 export default {
-    name: "Layout",
-    template: `
+  name: "Layout",
+  template: `
     <v-card class="layout-padding bg-transparent">
       <v-layout>
         <v-app-bar
@@ -25,37 +25,48 @@ export default {
         </v-navigation-drawer>
         <v-main>
           <v-card-text>
+            <introduction></introduction>
             <router-view></router-view>
           </v-card-text>
         </v-main>
       </v-layout>
     </v-card>
     `,
-    setup() {
-        const drawer = ref(false);
-        const group = ref(null);
-        const items = ref([
-          {
-              title: "Listening Practice Through Dictation",
-              value: "/",
-              code: "1",
-          },
-          {
-              title: "English speaking practice",
-              value: "/speech",
-              code: "2",
-          },
-          {
-              title: "Global",
-              value: "/global",
-              code: "3",
-          },
-      ]);
+  setup() {
+    const drawer = ref(false);
+    const group = ref(null);
+    const items = ref([
+      {
+        title: "Intoduction",
+        value: "/",
+        code: "1",
+      },
+      {
+        title: "Component",
+        value: "/component",
+        code: "2",
+      },
+      {
+        title: "pinia",
+        value: "/pinia",
+        code: "3",
+      },
+      {
+        title: "axios",
+        value: "/axios",
+        code: "4",
+      },
+      {
+        title: "Global",
+        value: "/global",
+        code: "5",
+      },
+    ]);
 
-        return {
-            drawer,
-            group,
-            items,
-        };
-    },
+    return {
+      drawer,
+      group,
+      items,
+    };
+  },
 };
